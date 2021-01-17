@@ -9,30 +9,37 @@ const User= mongoose.model('User',{
         minLength:2,
         maxLength:50,
     },
-    age:{
+    balance:{
         type:Number,
-        default:15,
+        default:50,
         validate(value){
             if(value<15) throw new Error('Invalide value')
             }
         },
-        Email:{
-            type:String,
-            required:true,
-            trim:true,
-            unique:true,
+        accountNumber:{
+            type:Number,
+            default:0,
             validate(value){
-                if (validator.isEmail(value)==false)
-                throw new Error('Invalide Email')
+                if(value<15) throw new Error('Invalide value')
+                }
             }
-        },
-           password:{
-            type:String,
-            required:true,
-            trim:true,
-            minLength:6,
-            maxLength:50,
-        } 
+        // Email:{
+        //     type:String,
+        //     required:true,
+        //     trim:true,
+        //     unique:true,
+        //     validate(value){
+        //         if (validator.isEmail(value)==false)
+        //         throw new Error('Invalide Email')
+        //     }
+        // },
+        //    password:{
+        //     type:String,
+        //     required:true,
+        //     trim:true,
+        //     minLength:6,
+        //     maxLength:50,
+        // } 
 })
 
 module.exports=User

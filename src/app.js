@@ -54,14 +54,14 @@ MongoClient.connect(connectionURL,{useNewParse:true},(err,client)=>{
             else{        
                 console.log("this Number is exist before") 
             }
-        }
-    })
-    yargs.argv
-    const db = client.db(dbUser)
+            const db = client.db(dbUser)
     console.log('db connected')
     db.collection('User').insertMany(
         [{ name: argv.name, balance: argv.balance, accountNumber: argv.accountNumber }]
       )
+        }
+    })
+    yargs.argv
     })  
 
 app.listen(port)
